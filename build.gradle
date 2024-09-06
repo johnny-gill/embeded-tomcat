@@ -38,3 +38,9 @@ task buildFatJar(type: Jar) {
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
+
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
